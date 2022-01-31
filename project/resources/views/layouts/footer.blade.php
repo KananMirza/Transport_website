@@ -14,40 +14,25 @@
                         <div class="ftr-top-contant">
 
                             <div class="text-left mb-40">
-                                <a href="index-1.html" class="brand-logo">
-                                    <img src="{{asset('assets/images/footer-brand-logo.png')}}" alt="Brand Logo">
+                                <a href="{{route('index')}}" class="brand-logo">
+                                    <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
                                 </a>
                             </div>
 
                             <p class="mb-40">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                                {{\App\Models\settings::first()->about}}
                             </p>
 
                             <ul class="social clearfix">
 
                                 <li>
-                                    <a href="#!" class="bg-facebook waves-light waves-effect waves-light">
+                                    <a href="{{json_decode(\App\Models\settings::first()->social_link)[0]}}" class="bg-facebook waves-light">
                                         <i class="ion-social-facebook-outline"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!" class="bg-twitter waves-light waves-effect waves-light">
-                                        <i class="ion-social-twitter-outline"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="bg-googleplus waves-light waves-effect waves-light">
-                                        <i class="ion-social-googleplus-outline"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="bg-youtube waves-light waves-effect waves-light">
-                                        <i class="ion-social-youtube-outline"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="bg-linkedin waves-light waves-effect waves-light">
-                                        <i class="ion-social-linkedin-outline"></i>
+                                    <a href="{{json_decode(\App\Models\settings::first()->social_link)[1]}}" class="bg-googleplus waves-light">
+                                        <i class="ion-social-instagram-outline"></i>
                                     </a>
                                 </li>
 
@@ -62,40 +47,18 @@
                         <div class="ftr-service-link">
 
                             <h2 class="title-small mb-40">
-                                services
+                                Xidmətlərimiz
                             </h2>
 
                             <ul class="ftr-link-list ul-li-block">
+                                @foreach(\App\Models\services::where('status','1')->get() as $service)
                                 <li>
                                     <a href="#!">
                                         <i class="ion-checkmark-circled"></i>
-                                        air freight
+                                        {{$service->title}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="ion-checkmark-circled"></i>
-                                        Land Transport
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="ion-checkmark-circled"></i>
-                                        Logistic
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="ion-checkmark-circled"></i>
-                                        Sea Freight
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="ion-checkmark-circled"></i>
-                                        Warehousing
-                                    </a>
-                                </li>
+                                @endforeach
                             </ul>
 
                         </div>
@@ -107,38 +70,32 @@
                         <div class="ftr-quick-link">
 
                             <h2 class="title-small mb-40">
-                                quick links
+                                Keçid
                             </h2>
 
                             <ul class="ftr-link-list ul-li-block">
                                 <li>
                                     <a href="about.html">
                                         <i class="ion-checkmark-circled"></i>
-                                        About Us
+                                        Ana səhifə
                                     </a>
                                 </li>
                                 <li>
                                     <a href="contact.html">
                                         <i class="ion-checkmark-circled"></i>
-                                        Contact
+                                        Haqqımızda
                                     </a>
                                 </li>
                                 <li>
                                     <a href="blog.html">
                                         <i class="ion-checkmark-circled"></i>
-                                        Latest Blog
+                                        Blog
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#!">
                                         <i class="ion-checkmark-circled"></i>
-                                        Tracking Info
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i class="ion-checkmark-circled"></i>
-                                        Pricing
+                                        Əlaqə
                                     </a>
                                 </li>
                             </ul>
@@ -159,26 +116,40 @@
                                 <li>
                                     <p>
                                         <i class="ion-location"></i>
-                                        3256  Mouse Roda <br>New York, USA
+                                        {{\App\Models\settings::first()->adress}}
                                     </p>
                                 </li>
                                 <li>
+                                    <a href="tel: {{json_decode(\App\Models\settings::first()->phones)[0]}}">
                                     <p>
                                         <i class="ion-iphone"></i>
-                                        +1 437 800 2078
+                                        {{json_decode(\App\Models\settings::first()->phones)[0]}}
                                     </p>
+                                    </a>
                                 </li>
                                 <li>
+                                    <a href="tel: {{json_decode(\App\Models\settings::first()->phones)[1]}}">
                                     <p>
                                         <i class="ion-android-call"></i>
-                                        +1 437 800 2078
+                                        {{json_decode(\App\Models\settings::first()->phones)[1]}}
                                     </p>
+                                    </a>
                                 </li>
                                 <li>
+                                    <a href="tel: {{json_decode(\App\Models\settings::first()->phones)[2]}}">
+                                    <p>
+                                        <i class="ion-android-call"></i>
+                                        {{json_decode(\App\Models\settings::first()->phones)[2]}}
+                                    </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto: {{\App\Models\settings::first()->email}}">
                                     <p>
                                         <i class="ion-android-mail"></i>
-                                        Info@sitename.com
+                                        {{\App\Models\settings::first()->email}}
                                     </p>
+                                    </a>
                                 </li>
                             </ul>
 
@@ -201,19 +172,10 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <p class="copyright">
-                        © All Right Reserved.Designed by
-                        <a href="https://www.htmlmate.com/" target="blank" class="clr-orange"><u>HtmlMate</u></a>
+                        © All Right Reserved.Developed by
+                        <a href="https://kananmirza.com/" target="blank" class="clr-orange"><u>KananMirza</u></a>
                     </p>
                 </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12">
-                    <ul class="ftr-menu ul-li text-right">
-                        <li><a href="#!">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#!">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </div>

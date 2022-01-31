@@ -60,7 +60,7 @@
 
                 <!-- brand-logo - start -->
                 <div class="col-lg-3">
-                    <a href="index-1.html" class="brand-logo">
+                    <a href="{{route('index')}}" class="brand-logo">
                         <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
                     </a>
                 </div>
@@ -69,7 +69,7 @@
                 <!-- main-menu - start -->
                 <div class="col-lg-6">
                     <ul class="main-menu">
-                        <li class="active"><a href="index-1.html">Ana səhifə</a></li>
+                        <li class="active"><a href="{{route('index')}}">Ana səhifə</a></li>
                         <li><a href="about.html">Haqqımızda</a></li>
 
                         <li>
@@ -126,7 +126,7 @@
 <nav class="alt-navbar navbar">
 
     <!-- brand logo - start -->
-    <a class="navbar-brand" href="index-1.html">
+    <a class="navbar-brand" href="{{route('index')}}">
         <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
     </a>
     <!-- brand logo - end -->
@@ -175,7 +175,7 @@
         <ul class="alt-menu-list navbar-nav">
 
             <li class="nav-item active">
-                <a class="nav-link" href="index-1.html">Ana səhifə</a>
+                <a class="nav-link" href="{{route('index')}}">Ana səhifə</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about.html">Haqqımızda</a>

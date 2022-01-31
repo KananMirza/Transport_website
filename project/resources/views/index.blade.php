@@ -6,38 +6,19 @@
 		================================================== -->
     <section id="slider-section" class="slider-section clearfix">
 
-        <!-- item - start -->
-        <div class="item slider-bg1">
-            <div class="overlay-white">
-                <div class="container">
-                    <h3 class="clr-orange mb-15">world best</h3>
-                    <h1 class="mb-40">
-                        Logistics & Transport<br>
-                        Company
-                    </h1>
-                    <div class="text-left">
-                        <a href="contact.html" class="custom-btn bg-orange waves-light">
-                            <span>contact us</span>
-                            <i class="ion-ios-arrow-forward"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- item - end -->
 
+        @foreach($sliders as $slider)
         <!-- item - start -->
-        <div class="item slider-bg2">
+        <div class="item" style="background-image: url('{{env('way').$slider->image}}')">
             <div class="overlay-white">
                 <div class="container">
-                    <h3 class="clr-orange mb-15">world best</h3>
+                    <h3 class="clr-orange mb-15">{{$slider->title}}</h3>
                     <h1 class="mb-40">
-                        Logistics & Transport<br>
-                        Company
+                        {{$slider->content}}
                     </h1>
                     <div class="text-left">
                         <a href="contact.html" class="custom-btn bg-orange waves-light">
-                            <span>contact us</span>
+                            <span>Əlaqə</span>
                             <i class="ion-ios-arrow-forward"></i>
                         </a>
                     </div>
@@ -45,66 +26,7 @@
             </div>
         </div>
         <!-- item - end -->
-
-        <!-- item - start -->
-        <div class="item slider-bg3">
-            <div class="overlay-white">
-                <div class="container">
-                    <h3 class="clr-orange mb-15">world best</h3>
-                    <h1 class="mb-40">
-                        Logistics & Transport<br>
-                        Company
-                    </h1>
-                    <div class="text-left">
-                        <a href="contact.html" class="custom-btn bg-orange waves-light">
-                            <span>contact us</span>
-                            <i class="ion-ios-arrow-forward"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- item - end -->
-
-        <!-- item - start -->
-        <div class="item slider-bg4">
-            <div class="overlay-white">
-                <div class="container">
-                    <h3 class="clr-orange mb-15">world best</h3>
-                    <h1 class="mb-40">
-                        Logistics & Transport<br>
-                        Company
-                    </h1>
-                    <div class="text-left">
-                        <a href="contact.html" class="custom-btn bg-orange waves-light">
-                            <span>contact us</span>
-                            <i class="ion-ios-arrow-forward"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- item - end -->
-
-        <!-- item - start -->
-        <div class="item slider-bg5">
-            <div class="overlay-white">
-                <div class="container">
-                    <h3 class="clr-orange mb-15">world best</h3>
-                    <h1 class="mb-40">
-                        Logistics & Transport<br>
-                        Company
-                    </h1>
-                    <div class="text-left">
-                        <a href="contact.html" class="custom-btn bg-orange waves-light">
-                            <span>contact us</span>
-                            <i class="ion-ios-arrow-forward"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- item - end -->
+            @endforeach
 
     </section>
     <!-- slider-section - end
@@ -122,38 +44,37 @@
             <!-- features-items-area - start -->
             <ul class="features-items-area z-depth-1">
 
-                <li>
-                    <div class="feature-title mb-15">
-                        <h2>
-                            <i class="ion-android-checkmark-circle"></i>
-                            most secured
-                        </h2>
-                    </div>
-
-                    <div class="feature-contant">
-                        <h3>1</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
-                    </div>
-                </li>
 
                 <li>
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            world wide
+                            24/7 support
                         </h2>
                     </div>
 
                     <div class="feature-contant">
-                        <h3>2</h3>
+                        <h3>3</h3>
                         <p>
                             Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
                         </p>
                     </div>
                 </li>
+                <li>
+                    <div class="feature-title mb-15">
+                        <h2>
+                            <i class="ion-android-checkmark-circle"></i>
+                            24/7 support
+                        </h2>
+                    </div>
 
+                    <div class="feature-contant">
+                        <h3>3</h3>
+                        <p>
+                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
+                        </p>
+                    </div>
+                </li>
                 <li>
                     <div class="feature-title mb-15">
                         <h2>
@@ -172,8 +93,6 @@
 
             </ul>
             <!-- features-items-area - end -->
-
-
 
             <!-- features-items-area2 - start -->
             <ul class="features-items-area2 z-depth-1">
@@ -244,129 +163,39 @@
         <div class="container">
 
             <div class="section-title">
-                <h3>our best</h3>
-                <h2>service</h2>
+                <h3>Bizim</h3>
+                <h2>Xidmətlərimiz</h2>
             </div>
-
-
 
             <!-- service-slider - start -->
             <div class="service-slider owl-carousel owl-theme">
 
+            @foreach($services as $service)
                 <!-- item - start -->
-                <div class="item air-freight-bg">
+                <div class="item" style="background-image: url('{{env('way').$service->image}}')" >
                     <div class="overlay-white">
                         <h4 class="title-small mb-40">
-                            Air Freight
-                            <small class="icon">
-                                <img src="{{asset('assets/images/service/plain-icon.png')}}" alt="icon">
-                            </small>
-                        </h4>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
-                        </p>
-                    </div>
-                </div>
-                <!-- item - end -->
-
-                <!-- item - start -->
-                <div class="item sea-freight-bg">
-                    <div class="overlay-white">
-                        <h4 class="title-small mb-40">
-                            Sea Freight
-                            <small class="icon">
-                                <img src="{{asset('assets/images/service/ship-icon.png')}}" alt="icon">
-                            </small>
-                        </h4>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
-                        </p>
-                    </div>
-                </div>
-                <!-- item - end -->
-
-                <!-- item - start -->
-                <div class="item land-transport-bg">
-                    <div class="overlay-white">
-                        <h4 class="title-small mb-40">
-                            Land Transport
+                            {{$service->title}}
                             <small class="icon">
                                 <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
                             </small>
                         </h4>
                         <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
+                          {{$service->content}}
                         </p>
                     </div>
                 </div>
                 <!-- item - end -->
-
-
-                <!-- item - start -->
-                <div class="item air-freight-bg">
-                    <div class="overlay-white">
-                        <h4 class="title-small mb-40">
-                            Air Freight
-                            <small class="icon">
-                                <img src="{{asset('assets/images/service/plain-icon.png')}}" alt="icon">
-                            </small>
-                        </h4>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
-                        </p>
-                    </div>
-                </div>
-                <!-- item - end -->
-
-                <!-- item - start -->
-                <div class="item sea-freight-bg">
-                    <div class="overlay-white">
-                        <h4 class="title-small mb-40">
-                            Sea Freight
-                            <small class="icon">
-                                <img src="{{asset('assets/images/service/ship-icon.png')}}" alt="icon">
-                            </small>
-                        </h4>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
-                        </p>
-                    </div>
-                </div>
-                <!-- item - end -->
-
-                <!-- item - start -->
-                <div class="item land-transport-bg">
-                    <div class="overlay-white">
-                        <h4 class="title-small mb-40">
-                            Land Transport
-                            <small class="icon">
-                                <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
-                            </small>
-                        </h4>
-                        <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur
-                            adipisci velit sed quia non.
-                        </p>
-                    </div>
-                </div>
-                <!-- item - end -->
+            @endforeach
 
             </div>
             <!-- service-slider - end -->
 
         </div>
+
     </section>
     <!-- service-section - end
     ================================================== -->
-
-
-
-
 
     <!-- quote-section - start
     ================================================== -->
@@ -390,40 +219,26 @@
                     <form class="quote-form">
 
                         <div class="section-title">
-                            <h3>request a</h3>
-                            <h2>quote</h2>
+                            <h3>Bizimlə</h3>
+                            <h2>Əlaqə</h2>
                         </div>
 
                         <div class="row">
 
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" placeholder="Name">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <input type="text" placeholder="Ad">
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <input type="email" placeholder="Email">
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <input type="text" placeholder="Service (optional)">
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <select class="mdb-select">
-                                    <option value="" disabled selected>Services</option>
-                                    <option value="1">Option 1</option>
-                                    <option value="2">Option 2</option>
-                                    <option value="3">Option 3</option>
-                                    <option value="4">Option 4</option>
-                                    <option value="5">Option 5</option>
-                                </select>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <input type="email" placeholder="Mobil nömrə">
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                <textarea placeholder="Write your message"></textarea>
+                                <textarea placeholder="Zəhmət olmasa mesajınızı qeyd edin.Əməkdaşlarımız tezliklə sizinlə əlaqə saxlayacaqdır."></textarea>
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <a href="#!" class="custom-btn bg-orange waves-light waves-effect waves-light" tabindex="0">
-                                    <span>send message</span>
+                                    <span>Göndər</span>
                                     <i class="ion-android-send"></i>
                                 </a>
                             </div>
@@ -441,6 +256,45 @@
     </section>
     <!-- quote-section - end
     ================================================== -->
+    <!-- service-section - start
+   ================================================== -->
+    <section id="service-section" class="service-section sec-ptb-100 clearfix">
+        <div class="container">
+
+            <div class="section-title">
+                <h3>Daşıdığımız</h3>
+                <h2>Yüklər</h2>
+            </div>
+
+            <!-- service-slider - start -->
+            <div class="service-slider owl-carousel owl-theme">
+
+            @foreach($cargoes as $cargo)
+                <!-- item - start -->
+                    <div class="item" style="background-image: url('{{env('way').$cargo->image}}')" >
+                        <div class="overlay-white">
+                            <h4 class="title-small mb-40">
+                                {{$cargo->title}}
+                                <small class="icon">
+                                    <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
+                                </small>
+                            </h4>
+                            <p>
+                                {{$cargo->content}}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- item - end -->
+                @endforeach
+
+            </div>
+            <!-- service-slider - end -->
+
+        </div>
+
+    </section>
+    <!-- service-section - end
+    ================================================== -->
 
 
 
@@ -455,21 +309,17 @@
                 <!-- about-us-area - start -->
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="section-title">
-                        <h3>have a look</h3>
-                        <h2>about us</h2>
+                        <h3>Şirkət</h3>
+                        <h2>Haqqında</h2>
                     </div>
 
                     <div class="about-us-area">
-                        <h4 class="title-small mb-40">
-                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim idest
-                        </h4>
-
-                        <p class="mb-40">
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-                        </p>
+                       <p class="mb-40">
+                           {{$settings->about}}
+                       </p>
 
                         <a href="about.html" class="custom-btn bg-blue waves-light waves-effect waves-light" tabindex="0">
-                            <span>learn more</span>
+                            <span>Ətraflı</span>
                             <i class="ion-ios-arrow-forward"></i>
                         </a>
 
@@ -480,8 +330,8 @@
                 <!-- question-area - start -->
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="section-title">
-                        <h3>questions & reply</h3>
-                        <h2>faq answers</h2>
+                        <h3>Yükünüzün</h3>
+                        <h2>daşınma prosesi</h2>
                     </div>
 
                     <div class="question-area">
@@ -493,14 +343,14 @@
                                 <div class="card-header" role="tab" id="headingOne">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <h5>
-                                            Where do I find my VIN?
+                                            Sifarişinizin qəbulu
                                         </h5>
                                     </a>
                                 </div>
 
                                 <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="card-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.
+                                        Bu mərhələdə sifariş qəbul edildikdən sonra dərhal əməkdaşlarımız qeyd olunan ünvana yönlendirilir
                                     </div>
                                 </div>
                             </div>
@@ -513,7 +363,7 @@
                                 <div class="card-header" role="tab" id="headingTwo">
                                     <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         <h5>
-                                            How are volumetrics calculated?
+                                            Yüklərin qablaşdırılması
                                         </h5>
                                     </a>
                                 </div>
@@ -521,7 +371,7 @@
                                 <!-- Card body -->
                                 <div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingTwo">
                                     <div class="card-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.
+                                    Bu mərhələdə yükləriniz təcrübəli əməkdaşlarımız tərəfindən düzgün qaydada qablaşdırılır.
                                     </div>
                                 </div>
                             </div>
@@ -534,7 +384,7 @@
                                 <div class="card-header" role="tab" id="headingThree">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         <h5>
-                                            Is my vehicle involved in the airbag recall?
+                                            Ünvana çatdırılması
                                         </h5>
                                     </a>
                                 </div>
@@ -542,7 +392,28 @@
                                 <!-- Card body -->
                                 <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
                                     <div class="card-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.
+                                        Bu mərhələdə qablaşdırılmış yükləriniz əməkdaşlarımız tərəfindən qeyd olunan ünvana daşınılır
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Accordion card - end -->
+
+                            <!-- Accordion card - start -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingFour">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                        <h5>
+                                            Təhvil  verilməsi
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="card-body">
+                                    Bu mərhələdə yüklər müştəriyə təhvil verilir.
                                     </div>
                                 </div>
                             </div>

@@ -1261,12 +1261,6 @@ ol.breadcrumb {
   background-position: center center;
 }
 
-.slider-bg1 {background-image: url(../images/slider/slider-bg1.jpg);}
-.slider-bg2 {background-image: url(../images/slider/slider-bg2.jpg);}
-.slider-bg3 {background-image: url(../images/slider/slider-bg3.jpg);}
-.slider-bg4 {background-image: url(../images/slider/slider-bg4.jpg);}
-.slider-bg5 {background-image: url(../images/slider/slider-bg5.jpg);}
-
 .slick-dotted.slick-slider {margin-bottom: 0px;}
 .slider-section .slick-arrow {display: none !important;}
 .slider-section .slick-dots {
@@ -1441,9 +1435,6 @@ ol.breadcrumb {
   background-repeat: no-repeat;
   background-position: center center;
 }
-.air-freight-bg {background-image: url(../images/service/img1.jpg);}
-.sea-freight-bg {background-image: url(../images/service/img2.jpg);}
-.land-transport-bg {background-image: url(../images/service/img3.jpg);}
 
 .service-section .item .overlay-white {
   padding: 30px;

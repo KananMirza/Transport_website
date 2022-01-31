@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title',"Kampaniyalar")
+@section('title',"Slider")
 
 @section('content')
     <!-- Main Container -->
