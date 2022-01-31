@@ -1,6 +1,6 @@
 <head>
     @yield('meta')
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}">
+    <link rel="shortcut icon" href="{{env('way').\App\Models\settings::first()->favicon}}">
 
     <!-- mdb fraimwork - css include -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">

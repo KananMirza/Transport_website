@@ -6,7 +6,7 @@ MedWay - HTML5 Template
 
 File:           CSS Base
 Version:        1.0
-Last change:    11/10/2017 
+Last change:    11/10/2017
 Author:         HTMLMATE
 -------------------------------------------------- */
 
@@ -103,7 +103,6 @@ a {
   color: #6b6b6b;
   text-decoration: none;
   display: inline-block;
-  text-transform: capitalize;
 }
 a:focus {outline: none;}
 a:hover,
@@ -198,7 +197,7 @@ textarea:focus:not([readonly]) {
 
 
 
-/* customization of unorder list - start 
+/* customization of unorder list - start
 -------------------------------------------------- */
 ul.ul-li,
 ul.ul-li-block {
@@ -225,7 +224,7 @@ ul.rateing-star li.rateing-point {
 
 
 
-/* mate tag - start 
+/* mate tag - start
 -------------------------------------------------- */
 .post-mate {padding: 15px 0px;}
 .post-mate li {
@@ -304,7 +303,7 @@ ul.rateing-star li.rateing-point {
 
 
 
-/* padding - margin setting - start 
+/* padding - margin setting - start
 -------------------------------------------------- */
 .sec-ptb-100 {padding: 100px 0px;}
 
