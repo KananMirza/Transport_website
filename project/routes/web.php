@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\General\General;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\About\General as About;
+use App\Http\Controllers\Contact\General as Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [General::class, "index"])->name('index');
+Route::post('/sifaris', [General::class, "order"])->name('order');
+
+Route::get('/haqqimizda', [About::class, "aboutIndex"])->name('aboutIndex');
+
+Route::get('/elaqe', [Contact::class, "contactIndex"])->name('contactIndex');
+
+

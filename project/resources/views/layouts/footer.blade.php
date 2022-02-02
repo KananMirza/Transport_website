@@ -13,9 +13,9 @@
                     <div class="col-lg-5 col-md-6 col-sm-12">
                         <div class="ftr-top-contant">
 
-                            <div class="text-left mb-40">
+                            <div class="text-left">
                                 <a href="{{route('index')}}" class="brand-logo">
-                                    <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
+                                    <img src="{{env('way').\App\Models\settings::first()->logo}}" style="margin-top: -100px" alt="UcuzYükdaşıma Logo">
                                 </a>
                             </div>
 
@@ -81,7 +81,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">
+                                    <a href="{{route('aboutIndex')}}">
                                         <i class="ion-checkmark-circled"></i>
                                         Haqqımızda
                                     </a>
@@ -93,7 +93,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#!">
+                                    <a href="{{route('contactIndex')}}">
                                         <i class="ion-checkmark-circled"></i>
                                         Əlaqə
                                     </a>
@@ -109,7 +109,7 @@
                         <div class="ftr-location">
 
                             <h2 class="title-small mb-40">
-                                location
+                                Əlaqə
                             </h2>
 
                             <ul class="ftr-link-list ul-li-block">

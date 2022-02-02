@@ -61,7 +61,7 @@
                 <!-- brand-logo - start -->
                 <div class="col-lg-3">
                     <a href="{{route('index')}}" class="brand-logo">
-                        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
+                        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="margin-top: -100px" alt="UcuzYükdaşıma Logo">
                     </a>
                 </div>
                 <!-- brand-logo - end -->
@@ -70,7 +70,7 @@
                 <div class="col-lg-6">
                     <ul class="main-menu">
                         <li class="active"><a href="{{route('index')}}">Ana səhifə</a></li>
-                        <li><a href="about.html">Haqqımızda</a></li>
+                        <li><a href="{{route('aboutIndex')}}">Haqqımızda</a></li>
 
                         <li>
                             <a href="#!">Xidmətlər <i class="ion-arrow-down-b"></i></a>
@@ -88,7 +88,7 @@
                         </li>
 
                         <li>
-                            <a href="#!">Əlaqə </a>
+                            <a href="{{route('contactIndex')}}">Əlaqə </a>
                         </li>
                     </ul>
                 </div>
@@ -127,7 +127,7 @@
 
     <!-- brand logo - start -->
     <a class="navbar-brand" href="{{route('index')}}">
-        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="width: 236px;height: 54px" alt="UcuzYükdaşıma Logo">
+        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="height: 50px;width: 150px" alt="UcuzYükdaşıma Logo">
     </a>
     <!-- brand logo - end -->
 
@@ -178,7 +178,7 @@
                 <a class="nav-link" href="{{route('index')}}">Ana səhifə</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about.html">Haqqımızda</a>
+                <a class="nav-link" href="{{route('aboutIndex')}}">Haqqımızda</a>
             </li>
 
             <li class="nav-item alt-dropdown-btn">
@@ -193,16 +193,15 @@
             </li>
 
             <li class="nav-item alt-dropdown-btn">
-                <button type="button" class="nav-link" data-toggle="collapse" data-target="#blog">
+                <a href="" class="nav-link">
                     Blog
-                </button>
+                </a>
             </li>
 
             <li class="nav-item alt-dropdown-btn">
-                <button type="button" class="nav-link" data-toggle="collapse" data-target="#contact">
-                    Əlaqə</i>
-                </button>
-
+                <a href="{{route('contactIndex')}}" class="nav-link">
+                    Əlaqə
+                </a>
             </li>
         </ul>
         <!-- Links -->
@@ -266,24 +265,25 @@
                 </div>
 
                 <div class="modal-body">
-                    <form class="quote-form">
+                    <form class="quote-form" action="{{route('order')}}" method="POST">
+                        @csrf
                         <div class="row">
 
                             <div class="col-lg-6">
                                 <input type="text" placeholder="Ad" name="name">
                             </div>
                             <div class="col-lg-6">
-                                <input type="email" placeholder="Mobil Nömrə" name="phone">
+                                <input type="text" placeholder="Mobil Nömrə" name="phone">
                             </div>
                             <div class="col-lg-12">
                                 <textarea placeholder="Zəhmət olmasa mesajınızı qeyd edin.Əməkdaşlarımız tezliklə sizinlə əlaqə saxlayacaqdır." name="message"></textarea>
                             </div>
 
                             <div class="col-lg-12">
-                                <a href="#!" class="custom-btn bg-orange waves-light waves-effect waves-light" tabindex="0">
+                                <button class="custom-btn bg-orange waves-light waves-effect waves-light" tabindex="0" type="submit">
                                     <span>Göndər</span>
                                     <i class="ion-android-send"></i>
-                                </a>
+                                </button>
                             </div>
 
                         </div>
