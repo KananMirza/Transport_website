@@ -27,7 +27,7 @@ class General extends Controller
         View::share('settings',$settings);
         $campaign = campaign::where([['status','1'],['publish_date','<=',$currentday],['end_date','>=',$currentday]])->get();
         View::share('campaigns',$campaign);
-        $blog = blog::where('status','1')->limit(3)->get();
+        $blog = blog::where('status','1')->limit(3)->orderBy('id','DESC')->get();
         View::share('blogs',$blog);
         return view('index');
     }
@@ -46,7 +46,8 @@ class General extends Controller
         ]);
 
         return redirect()->back()->with($order ? 'success' : 'error',true);
-
-
+    }
+    public function search(Request $request){
+        return view('search');
     }
 }

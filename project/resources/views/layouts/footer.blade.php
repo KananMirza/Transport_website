@@ -93,9 +93,9 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="blog.html">
+                                    <a href="{{route('blogIndex')}}">
                                         <i class="ion-checkmark-circled"></i>
-                                        Blog
+                                        Bloq
                                     </a>
                                 </li>
 

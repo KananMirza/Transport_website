@@ -1,6 +1,5 @@
 @extends('layouts.master')
-@section('title','Ucuz Yükdaşıma | Daşınılan Yüklər')
-
+@section('title','Ucuz Yükdaşıma | Axtarış')
 @section('meta')
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Kanan Mirzayev">
@@ -11,7 +10,7 @@
     <meta property="og:image:width" content="358" /><meta property="og:image:height" content="367" /><meta property="og:image:alt" content="Ucuz Yükdaşıma logo" /><meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="az_AZ" />
     <meta property="og:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
-    <meta property="og:url" content="https://yukdashima.az/dasidigimiz-yukler" />
+    <meta property="og:url" content="https://yukdashima.az/" />
     <meta property="og:site_name" content="Ucuz Yükdaşıma" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="{{env('way').\App\Models\settings::first()->logo}}" />
@@ -31,10 +30,10 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('index')}}">Ana səhifə</a></li>
-                    <li class="breadcrumb-item active">Daşıdığımız Yüklər</li>
+                    <li class="breadcrumb-item active">Axtarış</li>
                 </ol>
 
-                <h2 class="breadcrumb-title">Daşıdığımız Yüklər</h2>
+                <h2 class="breadcrumb-title">Axtarış</h2>
 
             </div>
         </div>
@@ -42,45 +41,5 @@
     <!-- breadcrumb-section - end
     ================================================== -->
 
-    <!-- service-section - start
-		================================================== -->
-    <section id="service-section" class="service-section sec-ptb-100 clearfix">
-        <div class="container">
 
-            <div class="section-title">
-                <h3>Daşıdığımız</h3>
-                <h2>Yüklər</h2>
-            </div>
-
-            <div class="row">
-            @foreach($cargoes as $cargo)
-                <!-- item - start -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-2">
-                        <div class="item" style="background-image: url('{{env('way').$cargo->image}}')">
-                            <div class="overlay-white">
-
-                                <h4 class="title-small mb-40">
-                                    {{$cargo->title}}
-                                    <small class="icon">
-                                        <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
-                                    </small>
-                                </h4>
-                                <p class="mb-15">
-                                    {{$cargo->content}}
-                                </p>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- item - end -->
-                @endforeach
-
-            </div>
-            <!-- row - end -->
-
-        </div>
-    </section>
-    <!-- service-section - end
-    ================================================== -->
 @endsection

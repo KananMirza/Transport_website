@@ -1,21 +1,21 @@
 @extends('layouts.master')
-@section('title','Ucuz Yükdaşıma | Bloqlar')
+@section('title',$blog->title)
 
 @section('meta')
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Kanan Mirzayev">
     <meta name="keywords" content="ucuz yükdaşıma,ucuz yukdasima,yükdaşıma xidməti,yukdasima xidmeti,yükdaşıma,yukdasima,yükdaşıma xidmətləri,yukdasima xidmeti qiymeti
 ,yukdasima xidmetleri,karqo və yükdaşıma şirkəti,serfeli yukdasima,yukdasima sirketleri" />
-    <meta name="description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz.">
-    <meta property="og:image" content="{{env('way').\App\Models\settings::first()->logo}}" />
+    <meta name="description" content="{{$blog->title}}">
+    <meta property="og:image" content="{{env('way').$blog->image}}" />
     <meta property="og:image:width" content="358" /><meta property="og:image:height" content="367" /><meta property="og:image:alt" content="Ucuz Yükdaşıma logo" /><meta property="og:image:type" content="image/png" />
     <meta property="og:locale" content="az_AZ" />
-    <meta property="og:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
-    <meta property="og:url" content="https://yukdashima.az/" />
+    <meta property="og:description" content="{{$blog->title}}" />
+    <meta property="og:url" content="{{env('way').'blog/'.$blog->slug}}" />
     <meta property="og:site_name" content="Ucuz Yükdaşıma" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{env('way').\App\Models\settings::first()->logo}}" />
-    <meta name="twitter:title" content="Ucuz yukdaşıma şirkəti - Ölkə daxili hər növ yüklərin daşınması" />
+    <meta name="twitter:image" content="{{env('way').$blog->image}}" />
+    <meta name="twitter:title" content="{{$blog->title}}" />
     <meta name="twitter:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
     <meta name="twitter:site" content="@ucuzyukdasima" />
 @endsection
@@ -31,10 +31,10 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('index')}}">Ana səhifə</a></li>
-                    <li class="breadcrumb-item active">Bloqlar</li>
+                    <li class="breadcrumb-item active">Bloq</li>
                 </ol>
 
-                <h2 class="breadcrumb-title">Bloqlar</h2>
+                <h2 class="breadcrumb-title">{{$blog->title}}</h2>
 
             </div>
         </div>
@@ -44,50 +44,44 @@
 
     <!-- blog-section - start
 		================================================== -->
-    <section id="blog-section" class="blog-section main-blog-page sec-ptb-100 clearfix">
+    <section id="blog-section" class="blog-section sec-ptb-100 clearfix">
         <div class="container">
             <div class="row">
 
-                <!-- all blog - start -->
+                <!-- blog-details - start -->
                 <div class="col-lg-8 col-md-12 col-sm-12">
-                    @foreach($blogs as $blog)
-                    <!-- blog - start -->
-                    <div class="blog mb-40">
+                    <div class="blog-details">
 
-                        <div class="blog-img">
-                            <img src="{{env('way').$blog->image}}" alt="{{$blog->title}}">
-                            <span class="date">
-									{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM Do YYYY')}}
-								</span>
+                        <!-- blog-details-img - start -->
+                        <div class="blog-details-img mb-40">
+                            <img src="{{env('way').$blog->image}}" alt="Image">
                         </div>
+                        <!-- blog-details-img - end -->
 
-                        <div class="blog-contant clearfix">
-                            <ul class="post-mate ul-li">
-                                <li>
-                                    Açar sözlər: {{$blog->tags}}
-                                </li>
-                            </ul>
+                        <ul class="post-mate ul-li mb-40">
+                            <li>
+                                Tags: {{$blog->tags}}
+                            </li>
+                        </ul>
 
-                            <h2 class="title-xlarge mb-2">
+                        <!-- blog-details-contant - start -->
+                        <div class="blog-details-contant mb-40">
+                            <h1 class="title-xlarge mb-15">
                                 {{$blog->title}}
-                            </h2>
-                            <p class="mb-2">
-                                {!! substr($blog->content,0,200) !!}...
-                            </p>
+                            </h1>
 
-                            <div class="text-left" style="margin-top: 20px">
-                                <a href="{{route('blogDetails',$blog->slug)}}" class="custom-btn bg-orange float-left waves-light">
-                                    <span>Ətraflı</span>
-                                    <i class="ion-ios-arrow-forward"></i>
-                                </a>
+                            <div class="mb-30">
+                                {!! $blog->content !!}
                             </div>
+
                         </div>
+                        <!-- blog-details-contant - end -->
+
 
                     </div>
-                    <!-- blog - end -->
-                        @endforeach
+
                 </div>
-                <!-- all blog - end -->
+                <!-- blog-details - end -->
 
                 <!-- right-sidebar - start -->
                 <div class="col-lg-4 col-md-12 col-sm-12">
@@ -111,7 +105,7 @@
                             <ul class="rs-recent-post-list ul-li-block">
                                 @foreach($blogs as $text)
                                     <li>
-                                        <a href="{{route('blogDetails',$text->slug)}}" class="waves-effect">
+                                        <a href="#!" class="waves-effect">
 											<span class="post-img float-left">
 												<img src="{{env('way').$text->image}}" alt="recent blog image">
 											</span>
@@ -144,13 +138,11 @@
                         </div>
                         <!-- rs-services - end -->
 
-
-
                         <!-- rs-contact - start -->
                         <div class="rs-contact">
                             @include('layouts.messages')
                             <h2 class="title-small">
-                               Yeniliklərdən xəbəriniz olsun
+                                Yeniliklərdən xəbəriniz olsun
                             </h2>
 
                             <form action="{{route('subscribe')}}" class="rs-contact-form" method="POST">
@@ -167,6 +159,7 @@
                         </div>
                         <!-- rs-contact - end -->
 
+
                     </div>
                 </div>
                 <!-- right-sidebar - end -->
@@ -176,5 +169,6 @@
     </section>
     <!-- blog-section - end
     ================================================== -->
+
 
 @endsection

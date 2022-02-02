@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\About\General as About;
 use App\Http\Controllers\Contact\General as Contact;
 use App\Http\Controllers\Services\General as Services;
+use App\Http\Controllers\Blog\General as Blog;
+use App\Http\Controllers\Sitemap\General as Sitemap;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +20,7 @@ use App\Http\Controllers\Services\General as Services;
 
 Route::get('/', [General::class, "index"])->name('index');
 Route::post('/sifaris', [General::class, "order"])->name('order');
+Route::get('/axtaris', [General::class, "search"])->name('search');
 
 //for about
 Route::get('/haqqimizda', [About::class, "aboutIndex"])->name('aboutIndex');
@@ -32,4 +35,18 @@ Route::get('/xidmetlerimiz/{slug}', [Services::class, "serviceDetails"])->name('
 Route::get('/dasidigimiz-yukler', [Services::class, "cargoIndex"])->name('cargoIndex');
 Route::get('/kampaniyalar/{slug}', [Services::class, "campaignIndex"])->name('campaignIndex');
 
+//for blog
+Route::get('/blog', [Blog::class, "blogIndex"])->name('blogIndex');
+Route::get('/blog/{slug}', [Blog::class, "blogDetails"])->name('blogDetails');
+Route::post('/blog', [Blog::class, "subscribe"])->name('subscribe');
 
+//for sitemap
+Route::get('/sitemap.xml',[Sitemap::class,'index'])->name('sitemapIndex');
+Route::get('/sitemap/services.xml',[Sitemap::class,'Author'])->name('sitemapAuthor');
+Route::get('/sitemap/campaign.xml',[Sitemap::class,'Category'])->name('sitemapCategory');
+Route::get('/sitemap/cargo.xml',[Sitemap::class,'Category'])->name('sitemapCategory');
+Route::get('/sitemap/blog.xml',[Sitemap::class,'News'])->name('sitemapNews');
+
+Route::fallback(function (){
+    return redirect()->route('index');
+});

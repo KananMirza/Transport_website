@@ -1,5 +1,24 @@
 @extends('layouts.master')
-@section('title','Ucuz yukdaşıma şirkəti - Ölkə daxili hər növ yüklərin daşınması')
+@section('title','Ucuz Yükdaşıma - Ölkə daxili hər növ yüklərin daşınması')
+
+@section('meta')
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kanan Mirzayev">
+    <meta name="keywords" content="ucuz yükdaşıma,ucuz yukdasima,yükdaşıma xidməti,yukdasima xidmeti,yükdaşıma,yukdasima,yükdaşıma xidmətləri,yukdasima xidmeti qiymeti
+,yukdasima xidmetleri,karqo və yükdaşıma şirkəti,serfeli yukdasima,yukdasima sirketleri" />
+    <meta name="description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz.">
+    <meta property="og:image" content="{{env('way').\App\Models\settings::first()->logo}}" />
+    <meta property="og:image:width" content="358" /><meta property="og:image:height" content="367" /><meta property="og:image:alt" content="Ucuz Yükdaşıma logo" /><meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="az_AZ" />
+    <meta property="og:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
+    <meta property="og:url" content="https://yukdashima.az/" />
+    <meta property="og:site_name" content="Ucuz Yükdaşıma" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{env('way').\App\Models\settings::first()->logo}}" />
+    <meta name="twitter:title" content="Ucuz yukdaşıma şirkəti - Ölkə daxili hər növ yüklərin daşınması" />
+    <meta name="twitter:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
+    <meta name="twitter:site" content="@ucuzyukdasima" />
+@endsection
 
 @section('content')
     <!-- slider-section - start
@@ -49,46 +68,28 @@
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            24/7 support
+                           Sürətli
                         </h2>
                     </div>
 
-                    <div class="feature-contant">
-                        <h3>3</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
-                    </div>
                 </li>
                 <li>
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            24/7 support
+                            Təhlükəsiz
                         </h2>
                     </div>
 
-                    <div class="feature-contant">
-                        <h3>3</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
-                    </div>
                 </li>
                 <li>
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            24/7 support
+                            Etibarlı
                         </h2>
                     </div>
 
-                    <div class="feature-contant">
-                        <h3>3</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
-                    </div>
                 </li>
 
             </ul>
@@ -101,15 +102,8 @@
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            most secured
+                            Sürətli
                         </h2>
-                    </div>
-
-                    <div class="feature-contant">
-                        <h3>1</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
                     </div>
                 </li>
 
@@ -117,15 +111,8 @@
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            world wide
+                            Təhlükəsiz
                         </h2>
-                    </div>
-
-                    <div class="feature-contant">
-                        <h3>2</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
                     </div>
                 </li>
 
@@ -133,15 +120,8 @@
                     <div class="feature-title mb-15">
                         <h2>
                             <i class="ion-android-checkmark-circle"></i>
-                            24/7 support
+                            Etibarlı
                         </h2>
-                    </div>
-
-                    <div class="feature-contant">
-                        <h3>3</h3>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla paria Excepteur sint occaecat cupid.
-                        </p>
                     </div>
                 </li>
 
@@ -228,6 +208,7 @@
                         </div>
 
                         <div class="row">
+                            @include('layouts.messages')
 
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <input type="text" placeholder="Ad" name="name">
@@ -486,8 +467,8 @@
 
             <!-- section-title - start -->
             <div class="section-title">
-                <h3>Yeniliklər</h3>
-                <h2>Məqalələr</h2>
+                <h3>Son</h3>
+                <h2>Bloqlar</h2>
             </div>
             <!-- section-title - end -->
 
@@ -500,7 +481,7 @@
                         <div class="blog-img">
                             <img src="{{env('way').$blog->image}}" alt="image">
                             <span class="date">
-									{{$blog->created_at->format('d/m/Y')}}
+									{{\Carbon\Carbon::parse($blog->created_at)->isoFormat('MMM Do YYYY')}}
 								</span>
                         </div>
 
@@ -514,13 +495,13 @@
                             </h3>
 
                             <div>
-                                <a href="blog-details.html" class="learn-more float-left">
+                                <a href="{{route('blogDetails',$blog->slug)}}" class="learn-more float-left">
                                     Ətraflı
                                     <i class="ion-android-arrow-forward"></i>
                                 </a>
                                 <ul class="share-list float-right text-right">
                                     <li>
-                                        <a href="#!" class="share">
+                                        <a href="javascript:void(0)" class="share">
                                             Paylaş
                                             <i class="ion-android-share-alt clr-orange"></i>
                                         </a>

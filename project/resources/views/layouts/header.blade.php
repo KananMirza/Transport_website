@@ -84,7 +84,7 @@
                         </li>
 
                         <li>
-                            <a href="#!">Blog </a>
+                            <a href="{{route('blogIndex')}}">Bloq </a>
                         </li>
 
                         <li>
@@ -193,8 +193,8 @@
             </li>
 
             <li class="nav-item alt-dropdown-btn">
-                <a href="" class="nav-link">
-                    Blog
+                <a href="{{route('blogIndex')}}" class="nav-link">
+                    Bloq
                 </a>
             </li>
 
@@ -235,9 +235,9 @@
                 <i class="ion-close-round"></i>
             </a>
         </div>
-        <form class="search-form text-center" action="#">
-            <input class="search-input" type="search" placeholder="Axtar...">
-            <button type="button" class="custom-btn bg-orange waves-effect waves-light">
+        <form class="search-form text-center" action="{{route('search')}}" method="GET">
+            <input class="search-input" type="search" placeholder="Axtar..." name="keyword">
+            <button type="submit" class="custom-btn bg-orange waves-effect waves-light">
                 <span>Axtar</span>
                 <i class="ion-search"></i>
             </button>

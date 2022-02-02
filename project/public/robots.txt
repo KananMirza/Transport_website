@@ -1,2 +1,8 @@
-User-agent: *
-Disallow:
+### Start ###
+
+User-Agent: *
+Allow: /
+
+Sitemap: https://yukdashima.az/sitemap.xml
+
+### Stop ###

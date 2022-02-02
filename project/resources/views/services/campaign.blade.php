@@ -1,5 +1,23 @@
 @extends('layouts.master')
 @section('title',$campaign->title)
+@section('meta')
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kanan Mirzayev">
+    <meta name="keywords" content="ucuz yükdaşıma,ucuz yukdasima,yükdaşıma xidməti,yukdasima xidmeti,yükdaşıma,yukdasima,yükdaşıma xidmətləri,yukdasima xidmeti qiymeti
+,yukdasima xidmetleri,karqo və yükdaşıma şirkəti,serfeli yukdasima,yukdasima sirketleri" />
+    <meta name="description" content="{{$campaign->title}}">
+    <meta property="og:image" content="{{env('way').$campaign->image}}" />
+    <meta property="og:image:width" content="358" /><meta property="og:image:height" content="367" /><meta property="og:image:alt" content="Ucuz Yükdaşıma logo" /><meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="az_AZ" />
+    <meta property="og:description" content="{{$campaign->title}}" />
+    <meta property="og:url" content="{{env('way').'kampaniyalar/'.$campaign->slug}}" />
+    <meta property="og:site_name" content="Ucuz Yükdaşıma" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{env('way').$campaign->image}}" />
+    <meta name="twitter:title" content="{{$campaign->title}}" />
+    <meta name="twitter:description" content="Əgər siz yüksək səviyyədə yüklərinizin daşınıb və çatdırılmasını, sərfəli qiymətə həyata keçirən şirkət axtarirsınızsa “Ucuz YükDaşıma” xidmətinə müraciət edə bilərsiniz." />
+    <meta name="twitter:site" content="@ucuzyukdasima" />
+@endsection
 
 @section('content')
 
@@ -108,11 +126,11 @@
                     <div class="right-sidebar">
 
                         <!-- rs-search - start -->
-                        <form action="#" class="rs-search mb-30">
-                            <input type="search" placeholder="Axtar..." aria-label="Search">
-                            <label class="search-btn">
+                        <form action="{{route('search')}}" method="GET" class="rs-search mb-30">
+                            <input type="search" placeholder="Axtar..." aria-label="Search" name="keyword">
+                            <button type="submit" class="search-btn">
                                 <i class="ion-search"></i>
-                            </label>
+                            </button>
                         </form>
                         <!-- rs-search - end -->
 

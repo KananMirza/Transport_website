@@ -64,7 +64,7 @@
                             <div class="col-lg-8 col-xl-5 offset-lg-4">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-alt-primary">
-                                        <i class="fa fa-check-circle mr-1"></i> Əlavə et
+                                        <i class="fa fa-check-circle mr-1"></i> Yenilə
                                     </button>
                                 </div>
                             </div>
