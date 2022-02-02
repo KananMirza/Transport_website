@@ -180,9 +180,13 @@
                                 <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
                             </small>
                         </h4>
-                        <p>
-                          {{$service->content}}
+                        <p class="mb-2">
+                            {{substr($service->content,0,30)}}...
                         </p>
+                        <a href="{{route('serviceDetails',$service->slug)}}" class="learn-more">
+                            Ətraflı
+                            <i class="ion-android-arrow-forward"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- item - end -->

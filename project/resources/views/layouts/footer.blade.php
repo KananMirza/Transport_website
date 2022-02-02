@@ -15,11 +15,11 @@
 
                             <div class="text-left">
                                 <a href="{{route('index')}}" class="brand-logo">
-                                    <img src="{{env('way').\App\Models\settings::first()->logo}}" style="margin-top: -100px" alt="UcuzYükdaşıma Logo">
+                                    <img src="{{env('way').\App\Models\settings::first()->logo}}" alt="UcuzYükdaşıma Logo">
                                 </a>
                             </div>
 
-                            <p class="mb-40">
+                            <p class="mb-40" style="margin-top: 20px">
                                 {{\App\Models\settings::first()->about}}
                             </p>
 
@@ -87,11 +87,18 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{route('servicesIndex')}}">
+                                        <i class="ion-checkmark-circled"></i>
+                                        Xidmətlərimiz
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="blog.html">
                                         <i class="ion-checkmark-circled"></i>
                                         Blog
                                     </a>
                                 </li>
+
                                 <li>
                                     <a href="{{route('contactIndex')}}">
                                         <i class="ion-checkmark-circled"></i>

@@ -61,7 +61,7 @@
                 <!-- brand-logo - start -->
                 <div class="col-lg-3">
                     <a href="{{route('index')}}" class="brand-logo">
-                        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="margin-top: -100px" alt="UcuzYükdaşıma Logo">
+                        <img src="{{env('way').\App\Models\settings::first()->logo}}" style="margin-top: -50px" alt="UcuzYükdaşıma Logo">
                     </a>
                 </div>
                 <!-- brand-logo - end -->
@@ -77,7 +77,7 @@
 
                             <div class="dropdown-area">
                                 <ul class="dropdown-list clearfix">
-                                    <li><a href="service.html">Xidmətlərimiz</a></li>
+                                    <li><a href="{{route('servicesIndex')}}">Xidmətlərimiz</a></li>
                                     <li><a href="service-details.html">Daşınılan yüklər</a></li>
                                 </ul>
                             </div>
@@ -187,7 +187,7 @@
                 </button>
 
                 <ul id="service" class="alt-dropdown collapse">
-                    <li><a href="service.html">Xidmətlərimiz</a></li>
+                    <li><a href="{{route('servicesIndex')}}">Xidmətlərimiz</a></li>
                     <li><a href="service-details.html">Daşınılan yüklər</a></li>
                 </ul>
             </li>
