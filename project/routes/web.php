@@ -42,10 +42,10 @@ Route::post('/blog', [Blog::class, "subscribe"])->name('subscribe');
 
 //for sitemap
 Route::get('/sitemap.xml',[Sitemap::class,'index'])->name('sitemapIndex');
-Route::get('/sitemap/services.xml',[Sitemap::class,'Author'])->name('sitemapAuthor');
-Route::get('/sitemap/campaign.xml',[Sitemap::class,'Category'])->name('sitemapCategory');
-Route::get('/sitemap/cargo.xml',[Sitemap::class,'Category'])->name('sitemapCategory');
-Route::get('/sitemap/blog.xml',[Sitemap::class,'News'])->name('sitemapNews');
+Route::get('/sitemap/services.xml',[Sitemap::class,'services'])->name('sitemapAuthor');
+Route::get('/sitemap/campaign.xml',[Sitemap::class,'campaign'])->name('sitemapCategory');
+Route::get('/sitemap/cargo.xml',[Sitemap::class,'cargo'])->name('sitemapCategory');
+Route::get('/sitemap/blog.xml',[Sitemap::class,'blog'])->name('sitemapNews');
 
 Route::fallback(function (){
     return redirect()->route('index');
