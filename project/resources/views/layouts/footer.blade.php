@@ -53,7 +53,7 @@
                             <ul class="ftr-link-list ul-li-block">
                                 @foreach(\App\Models\services::where('status','1')->get() as $service)
                                 <li>
-                                    <a href="#!">
+                                    <a href="{{route('serviceDetails',$service->slug)}}">
                                         <i class="ion-checkmark-circled"></i>
                                         {{$service->title}}
                                     </a>

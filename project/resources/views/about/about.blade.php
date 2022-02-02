@@ -26,7 +26,7 @@
 		================================================== -->
     <section id="about-section" class="about-section sec-ptb-100 clearfix">
         <div class="container">
-
+        @include('layouts.messages')
             <div class="row">
                 <!-- about-us-area - start -->
                 <div class="col-lg-6 col-md-12 col-xs-12">

@@ -29,4 +29,7 @@ Route::get('/elaqe', [Contact::class, "contactIndex"])->name('contactIndex');
 Route::get('/xidmetlerimiz', [Services::class, "servicesIndex"])->name('servicesIndex');
 Route::get('/xidmetlerimiz/{slug}', [Services::class, "serviceDetails"])->name('serviceDetails');
 
+Route::get('/dasidigimiz-yukler', [Services::class, "cargoIndex"])->name('cargoIndex');
+Route::get('/kampaniyalar/{slug}', [Services::class, "campaignIndex"])->name('campaignIndex');
+
 

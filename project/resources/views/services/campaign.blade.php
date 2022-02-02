@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title',$service->title)
+@section('title',$campaign->title)
 
 @section('content')
 
@@ -12,10 +12,10 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('index')}}">Ana səhifə</a></li>
-                    <li class="breadcrumb-item active">Xidmətlər</li>
+                    <li class="breadcrumb-item active">Kampaniyalar</li>
                 </ol>
 
-                <h2 class="breadcrumb-title">Xidmətlər</h2>
+                <h2 class="breadcrumb-title"> {{$campaign->title}}</h2>
 
             </div>
         </div>
@@ -36,18 +36,18 @@
 
                         <!-- service-details-img - start -->
                         <div class="service-details-img mb-40">
-                            <img src="{{env('way').$service->image}}" alt="Image">
+                            <img src="{{env('way').$campaign->image}}" alt="Image">
                         </div>
                         <!-- service-details-img - end -->
 
                         <!-- service-details-contant - start -->
                         <div class="service-details-contant mb-40">
                             <h1 class="title-xlarge mb-15">
-                                {{$service->title}}
+                                {{$campaign->title}}
                             </h1>
 
                             <p class="mb-30">
-                                {{$service->content}}
+                                {{$campaign->content}}
                             </p>
 
 
@@ -123,13 +123,13 @@
                             </h2>
 
                             <ul class="rs-services-list ul-li-block">
-                                @foreach($services as $servis)
-                                <li>
-                                    <a href="{{route('serviceDetails',$servis->slug)}}" class="waves-effect">
-                                        <i class="ion-ios-checkmark-outline clr-orange"></i>
-                                        {{$servis->title}}
-                                    </a>
-                                </li>
+                                @foreach($services as $service)
+                                    <li>
+                                        <a href="{{route('serviceDetails',$service->slug)}}" class="waves-effect">
+                                            <i class="ion-ios-checkmark-outline clr-orange"></i>
+                                            {{$service->title}}
+                                        </a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>

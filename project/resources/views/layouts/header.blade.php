@@ -69,7 +69,7 @@
                 <!-- main-menu - start -->
                 <div class="col-lg-6">
                     <ul class="main-menu">
-                        <li class="active"><a href="{{route('index')}}">Ana səhifə</a></li>
+                        <li><a href="{{route('index')}}">Ana səhifə</a></li>
                         <li><a href="{{route('aboutIndex')}}">Haqqımızda</a></li>
 
                         <li>
@@ -78,7 +78,7 @@
                             <div class="dropdown-area">
                                 <ul class="dropdown-list clearfix">
                                     <li><a href="{{route('servicesIndex')}}">Xidmətlərimiz</a></li>
-                                    <li><a href="service-details.html">Daşınılan yüklər</a></li>
+                                    <li><a href="{{route('cargoIndex')}}">Daşınılan yüklər</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -188,7 +188,7 @@
 
                 <ul id="service" class="alt-dropdown collapse">
                     <li><a href="{{route('servicesIndex')}}">Xidmətlərimiz</a></li>
-                    <li><a href="service-details.html">Daşınılan yüklər</a></li>
+                    <li><a href="{{route('cargoIndex')}}">Daşınılan yüklər</a></li>
                 </ul>
             </li>
 

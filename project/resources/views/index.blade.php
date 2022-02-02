@@ -17,7 +17,7 @@
                         {{$slider->content}}
                     </h1>
                     <div class="text-left">
-                        <a href="contact.html" class="custom-btn bg-orange waves-light">
+                        <a href="{{route('contactIndex')}}" class="custom-btn bg-orange waves-light">
                             <span>Əlaqə</span>
                             <i class="ion-ios-arrow-forward"></i>
                         </a>
@@ -306,7 +306,7 @@
 
     <!-- about-section - start
     ================================================== -->
-    <section id="about-section" class="about-section sec-ptb-100 clearfix">
+    <section id="about-section" class="about-section clearfix">
         <div class="container">
             <div class="row">
 
@@ -437,7 +437,7 @@
 
     <!-- service-section - start
    ================================================== -->
-    <section id="service-section" class="service-section sec-ptb-100 clearfix">
+    <section id="service-section" class="service-section clearfix">
         <div class="container">
 
             <div class="section-title">
@@ -458,9 +458,13 @@
                                     <img src="{{asset('assets/images/service/car-icon.png')}}" alt="icon">
                                 </small>
                             </h4>
-                            <p>
-                                {{$campaign->content}}
+                            <p class="mb-2">
+                                {{substr($campaign->content,0,30)}}...
                             </p>
+                            <a href="{{route('campaignIndex',$campaign->slug)}}" class="learn-more">
+                                Ətraflı
+                                <i class="ion-android-arrow-forward"></i>
+                            </a>
                         </div>
                     </div>
                     <!-- item - end -->
@@ -502,7 +506,7 @@
 
                         <div class="blog-contant clearfix">
                             <ul class="post-mate ul-li mb-15">
-                                <li>by <a href="#!" class="clr-orange">Admin</a></li>
+                                <li>by <a href="{{route('contactIndex')}}" class="clr-orange">Admin</a></li>
                             </ul>
 
                             <h3 class="title-xsmall mb-40">
