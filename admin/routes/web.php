@@ -93,4 +93,6 @@ Route::middleware('isLogin')->group(function () {
     //for Messages
     Route::get('/messages/all', [Contact::class, "messageIndex"])->name('messageIndex');
     Route::post('/messages/all', [Contact::class, "viewMessage"])->name('viewMessage');
+
+    Route::get('/subscribe/all', [Contact::class, "subscribeIndex"])->name('subscribeIndex');
 });

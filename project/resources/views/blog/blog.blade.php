@@ -2,10 +2,9 @@
 @section('title',$blog->title)
 
 @section('meta')
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
     <meta name="author" content="Kanan Mirzayev">
-    <meta name="keywords" content="ucuz yükdaşıma,ucuz yukdasima,yükdaşıma xidməti,yukdasima xidmeti,yükdaşıma,yukdasima,yükdaşıma xidmətləri,yukdasima xidmeti qiymeti
-,yukdasima xidmetleri,karqo və yükdaşıma şirkəti,serfeli yukdasima,yukdasima sirketleri" />
+    <meta name="keywords" content="{{$blog->tags}}" />
     <meta name="description" content="{{$blog->title}}">
     <meta property="og:image" content="{{env('way').$blog->image}}" />
     <meta property="og:image:width" content="358" /><meta property="og:image:height" content="367" /><meta property="og:image:alt" content="Ucuz Yükdaşıma logo" /><meta property="og:image:type" content="image/png" />

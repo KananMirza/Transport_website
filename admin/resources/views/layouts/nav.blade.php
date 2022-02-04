@@ -144,9 +144,16 @@
                     </ul>
                 </li>
                 <li class="nav-main-item">
-                    <a class="nav-main-link active" href="{{route('messageIndex')}}">
+                    <a class="nav-main-link" href="{{route('messageIndex')}}">
                         <i class="fas fa-comment-dots nav-main-link-icon"></i>
-                        <span class="nav-main-link-name">Mesajlar</span>
+                        <span class="nav-main-link-name">Mesajlar </span><strong>{{count(\App\Models\message::where('status','0')->get())}}</strong>
+
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link" href="{{route('subscribeIndex')}}">
+                        <i class="fas fa-users nav-main-link-icon"></i>
+                        <span class="nav-main-link-name">Abonələr</span>
 
                     </a>
                 </li>
