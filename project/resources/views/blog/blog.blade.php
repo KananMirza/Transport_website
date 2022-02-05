@@ -20,8 +20,6 @@
 @endsection
 
 @section('content')
-
-
     <!-- breadcrumb-section - start
 		================================================== -->
     <section id="breadcrumb-section" class="breadcrumb-section clearfix">
