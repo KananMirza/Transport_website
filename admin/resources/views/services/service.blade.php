@@ -20,7 +20,6 @@
             </div>
         </div>
         <!-- END Hero -->
-
         <!-- Page Content -->
         <div class="content">
         @include('layouts.error_messages')
